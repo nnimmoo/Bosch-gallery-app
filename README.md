@@ -48,6 +48,7 @@ CREATE TABLE paintings (
     shortBio TEXT
 );
 ```
+In the backend folder, you will find some helpful calls. Get calls get the paintings accordingly and post-call adds subscribers to the base. To fully run the project you need to run both commands ``npm start`` and ``node ./backend/main.js``
 ## Deployment 
 Deployed on: https://bosch-gallery.netlify.app/
 
