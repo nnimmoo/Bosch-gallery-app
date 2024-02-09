@@ -5,7 +5,7 @@ function Error404() {
         <>
 
             <section className="error-section">
-                <img src={ErrorImage} />
+                <img src={ErrorImage} alt="A bird" />
                 <div className="error-text">
                     <h1>404</h1>
                     <h2>

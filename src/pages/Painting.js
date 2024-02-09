@@ -4,7 +4,7 @@ import setBodyColor from '../script';
 import { Link } from "react-router-dom";
 import Zoom from 'react-img-zoom'
 import Error404 from '../components/Error404';
-import axios  from 'axios';
+import axios from 'axios';
 import { AUTH } from '../api';
 
 function Painting() {
@@ -14,11 +14,12 @@ function Painting() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const headers = {
-        'Authorization': `Bearer ${AUTH}`,
-    };
+
 
     useEffect(() => {
+        const headers = {
+            'Authorization': `Bearer ${AUTH}`,
+        };
         const fetchData = async () => {
             setIsLoading(true);
             try {
@@ -31,9 +32,9 @@ function Painting() {
             }
         };
 
-        fetchData(); 
+        fetchData();
 
-    }, []);
+    }, [id]);
     if (isLoading) {
         return <span className="loader"></span>;
     }

@@ -14,11 +14,12 @@ function Gallery() {
     setBodyColor({ color: "#ad7d4d" })
 
 
-    const headers = {
-        'Authorization': `Bearer ${AUTH}`,
-    };
+
 
     useEffect(() => {
+        const headers = {
+            'Authorization': `Bearer ${AUTH}`,
+        };
         const fetchData = async () => {
             setIsLoading(true);
             try {
