@@ -4,6 +4,8 @@ import setBodyColor from '../script';
 import { Link } from "react-router-dom";
 import Zoom from 'react-img-zoom'
 import Error404 from '../components/Error404';
+import axios  from 'axios';
+import { AUTH } from '../api';
 
 function Painting() {
     setBodyColor({ color: "#fff" })
@@ -12,27 +14,28 @@ function Painting() {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
+    const headers = {
+        'Authorization': `Bearer ${AUTH}`,
+    };
+
     useEffect(() => {
-        setIsLoading(true);
-        fetch(`http://localhost:3001/fetchPaintingbyId/+${id}`)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                setData(data[0]);
+        const fetchData = async () => {
+            setIsLoading(true);
+            try {
+                const response = await axios.get(`https://crudapi.co.uk/api/v1/gallery/${id}`, { headers });
+                setData(response.data);
                 setIsLoading(false);
-            })
-            .catch((error) => {
+            } catch (error) {
                 setError(error);
                 setIsLoading(false);
-            });
-    }, []);
+            }
+        };
 
+        fetchData(); 
+
+    }, []);
     if (isLoading) {
-        return <span class="loader"></span>;
+        return <span className="loader"></span>;
     }
 
     if (error) {

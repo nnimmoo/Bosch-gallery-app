@@ -1,0 +1,1 @@
+export const AUTH = process.env.REACT_APP_AUTH;

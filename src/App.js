@@ -9,6 +9,7 @@ import Main from "./pages/Main";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Painting from "./pages/Painting";
+import SubmitPainting from "./pages/SubmitPainting";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/About" element={<About />} />
           <Route path="/Gallery/:id" element={<Painting />} />
+          <Route path="/Submit" element={<SubmitPainting />} />
         </Routes>
       </Router>
     </>

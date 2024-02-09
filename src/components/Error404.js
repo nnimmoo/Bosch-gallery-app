@@ -9,8 +9,7 @@ function Error404() {
                 <div className="error-text">
                     <h1>404</h1>
                     <h2>
-                        Oh, this page was taken by the bird.<br />
-                        Sadly, there is nothing we can do.
+                        Oh no, this page doesn't exist.
                     </h2>
                 </div>
             </section>
